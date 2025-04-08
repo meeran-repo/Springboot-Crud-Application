@@ -30,7 +30,7 @@ This is a simple **Customer Management** CRUD application built using **Spring B
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/<your-username>/customer-management-service.git
-   cd customer-management-service```
+   cd customer-management-service
 
 2. **Run the application:**
    ```./mvnw spring-boot:run```
