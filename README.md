@@ -41,10 +41,11 @@ This is a simple **Customer Management** CRUD application built using **Spring B
 ---
 
 ## Sample API Endpoints
-Method	Endpoint	Description:
-POST	/api/customers	Create new customer
-GET	/api/customers	Get all customers
-GET	/api/customers/{id}	Get customer by ID
-PUT	/api/customers/{id}	Update customer
-DELETE	/api/customers/{id}	Delete customer
+**Method	Endpoint	Description:**
+
+- POST	/api/customers	Create new customer
+- GET	/api/customers	Get all customers
+- GET	/api/customers/{id}	Get customer by ID
+- PUT	/api/customers/{id}	Update customer
+- DELETE	/api/customers/{id}	Delete customer
 
