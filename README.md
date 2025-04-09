@@ -11,6 +11,9 @@ This is a simple **Customer Management** CRUD application built using **Spring B
 - List all customers
 - Update existing customer details
 - Delete a customer
+- Input validation using Jakarta Bean Validation
+- Negative testing using JUnit and MockMvc
+- Test coverage reporting using JaCoCo
 
 ---
 
@@ -22,6 +25,9 @@ This is a simple **Customer Management** CRUD application built using **Spring B
 - Spring Data JPA
 - H2 In-Memory Database
 - Maven
+- JUnit 5
+- MockMvc
+- JaCoCo
 
 ---
 
