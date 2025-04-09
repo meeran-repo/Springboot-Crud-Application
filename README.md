@@ -72,17 +72,17 @@ Input validation is applied using Jakarta Bean Validation in the DTO layer.
 ## Testing
 **Unit and integration tests are written using:**
 
-JUnit 5
-MockMvc for controller-level tests
-Mockito (ready to use for service layer)
+- JUnit 5
+- MockMvc for controller-level tests
+- Mockito (ready to use for service layer)
 
 **Negative Test Coverage:**
 
-Invalid email format
-Blank first name
-Invalid phone number
+- Invalid email format
+- Blank first name
+- Invalid phone number
 
-Junit Test Results:
+**Junit Test Results:**
 <img width="1159" alt="junit-test-pass" src="https://github.com/user-attachments/assets/29eb9efd-802a-44b4-b6b7-fdbff35f89f3" />
 
 ---
@@ -96,7 +96,7 @@ Code coverage is reported using JaCoCo and integrated with Maven.
 **View the report at:**
 target/site/jacoco/index.html
 
-Code Coverage Screenshot:
+**Code Coverage Screenshot:**
 <img width="1325" alt="jacoco-coverage-report" src="https://github.com/user-attachments/assets/a0f750e1-56a4-41be-ac17-ae502941795f" />
 
 
