@@ -2,7 +2,6 @@ package com.example.customermanagementservice.service.impl;
 
 import com.example.customermanagementservice.dto.CustomerDTO;
 
-
 import com.example.customermanagementservice.entity.Customer;
 import com.example.customermanagementservice.repository.CustomerRepository;
 import com.example.customermanagementservice.service.CustomerService;

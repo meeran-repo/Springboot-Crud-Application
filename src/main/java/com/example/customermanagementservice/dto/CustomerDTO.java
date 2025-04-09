@@ -1,11 +1,25 @@
 package com.example.customermanagementservice.dto;
 
+import jakarta.validation.constraints.*;
+
 public class CustomerDTO {
 
     private Long id;
+
+    @NotBlank(message = "First name is required")
+    @Size(min = 2, max = 50, message = "First name must be between 2 and 50 characters")
     private String firstName;
+
+    @NotBlank(message = "Last name is required")
+    @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters")
     private String lastName;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
     private String email;
+
+    @NotBlank(message = "Phone is required")
+    @Pattern(regexp = "\\d{10}", message = "Phone must be a 10-digit number")
     private String phone;
 
     public CustomerDTO() {}
@@ -18,7 +32,6 @@ public class CustomerDTO {
         this.phone = phone;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

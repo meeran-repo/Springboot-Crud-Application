@@ -1,0 +1,7 @@
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/CustomerManagementServiceApplication.java
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/controller/CustomerController.java
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/dto/CustomerDTO.java
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/entity/Customer.java
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/repository/CustomerRepository.java
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/service/CustomerService.java
+/Users/meeranmohammed/Downloads/customer-management-service/src/main/java/com/example/customermanagementservice/service/impl/CustomerServiceImpl.java

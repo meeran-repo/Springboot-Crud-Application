@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CustomerManagementService</a> &gt; <a href="index.source.html" class="el_package">com.example.customermanagementservice.service.impl</a> &gt; <span class="el_source">CustomerServiceImpl.java</span></div><h1>CustomerServiceImpl.java</h1><pre class="source lang-java linenums">package com.example.customermanagementservice.service.impl;
+
+import com.example.customermanagementservice.dto.CustomerDTO;
+
+import com.example.customermanagementservice.entity.Customer;
+import com.example.customermanagementservice.repository.CustomerRepository;
+import com.example.customermanagementservice.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+<span class="fc" id="L15">public class CustomerServiceImpl implements CustomerService {</span>
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Override
+    public CustomerDTO createCustomer(CustomerDTO dto) {
+<span class="nc" id="L22">        Customer customer = new Customer(dto.getFirstName(), dto.getLastName(), dto.getEmail(), dto.getPhone());</span>
+<span class="nc" id="L23">        customer = customerRepository.save(customer);</span>
+<span class="nc" id="L24">        dto.setId(customer.getId());</span>
+<span class="nc" id="L25">        return dto;</span>
+    }
+    
+    @Override
+    public CustomerDTO getCustomerById(Long id) {
+<span class="nc" id="L30">        Customer customer = customerRepository.findById(id)</span>
+<span class="nc" id="L31">                .orElseThrow(() -&gt; new RuntimeException(&quot;Customer not found with ID: &quot; + id));</span>
+<span class="nc" id="L32">        return mapToDTO(customer);</span>
+    }
+
+    @Override
+    public List&lt;CustomerDTO&gt; getAllCustomers() {
+<span class="nc" id="L37">        return customerRepository.findAll().stream()</span>
+<span class="nc" id="L38">                .map(this::mapToDTO)</span>
+<span class="nc" id="L39">                .collect(Collectors.toList());</span>
+    }
+
+    @Override
+    public CustomerDTO updateCustomer(Long id, CustomerDTO dto) {
+<span class="nc" id="L44">        Customer customer = customerRepository.findById(id)</span>
+<span class="nc" id="L45">                .orElseThrow(() -&gt; new RuntimeException(&quot;Customer not found with ID: &quot; + id));</span>
+
+<span class="nc" id="L47">        customer.setFirstName(dto.getFirstName());</span>
+<span class="nc" id="L48">        customer.setLastName(dto.getLastName());</span>
+<span class="nc" id="L49">        customer.setEmail(dto.getEmail());</span>
+<span class="nc" id="L50">        customer.setPhone(dto.getPhone());</span>
+
+<span class="nc" id="L52">        customerRepository.save(customer);</span>
+<span class="nc" id="L53">        return mapToDTO(customer);</span>
+    }
+
+    @Override
+    public void deleteCustomer(Long id) {
+<span class="nc" id="L58">        customerRepository.deleteById(id);</span>
+<span class="nc" id="L59">    }</span>
+
+    private CustomerDTO mapToDTO(Customer customer) {
+<span class="nc" id="L62">        return new CustomerDTO(</span>
+<span class="nc" id="L63">                customer.getId(),</span>
+<span class="nc" id="L64">                customer.getFirstName(),</span>
+<span class="nc" id="L65">                customer.getLastName(),</span>
+<span class="nc" id="L66">                customer.getEmail(),</span>
+<span class="nc" id="L67">                customer.getPhone()</span>
+        );
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
