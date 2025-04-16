@@ -14,6 +14,7 @@ This is a simple **Customer Management** CRUD application built using **Spring B
 - Input validation using Jakarta Bean Validation
 - Negative testing using JUnit and MockMvc
 - Test coverage reporting using JaCoCo
+- Performance testing with Gatling (load simulation)
 
 ---
 
@@ -28,6 +29,7 @@ This is a simple **Customer Management** CRUD application built using **Spring B
 - JUnit 5
 - MockMvc
 - JaCoCo
+- Gatling for performance/load testing
 
 ---
 
@@ -99,5 +101,23 @@ target/site/jacoco/index.html
 **Code Coverage Screenshot:**
 <img width="1325" alt="jacoco-coverage-report" src="https://github.com/user-attachments/assets/a0f750e1-56a4-41be-ac17-ae502941795f" />
 
+---
+
+## Performance Testing with Gatling
+Integrated Gatling for load testing using Scala simulations
+
+Simulated:
+
+- 10 requests/sec for Create, Update, Delete
+
+- 100 requests/sec for Get by ID
+
+- Duration: 1 minute per endpoint
+
+**Report:**
+```gatling-maven-plugin-demo/target/gatling/customercrudsimulation*/index.html```
+
+**Sample Report Screenshot:**
+<img width="1524" alt="Gatling-report" src="https://github.com/user-attachments/assets/dcd31e22-b73b-4e8e-a618-b25bfa940bdd" />
 
 
